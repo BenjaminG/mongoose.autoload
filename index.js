@@ -46,7 +46,7 @@ module.exports = function(mongoose, loadPath,recursive){
 		if (fs.statSync(file).isFile()){
 
 			var name = path.basename(file);
-			name = name.replace(/\.js|\.coffee/','');
+			name = name.replace(/\.js|\.coffee/,'');
 			mongoose.models[name] = mongoose.model(name, require(file)(mongoose));
 
 		}
